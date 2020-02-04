@@ -93,9 +93,6 @@ const listDescending = () => {
 
 }
 
-
-
-
 const searchVideo = () => {
     const filterMenuData = videoList.filter(item => {
         const selected = searchBox.value;
