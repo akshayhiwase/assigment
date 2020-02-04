@@ -64,24 +64,38 @@ const videoCardGrid = listItems => {
 
 videoCardGrid(videoList)
 
-const listascending = () => {
-    let sortedMenuData = videoList.sort((data1, data2) => {
-        return data1.title - data2.title;
+const listAscending = () => {
+
+    videoList.sort(function (a, b) {
+        var x = a.title.toLowerCase();
+        var y = b.title.toLowerCase();
+        if (x < y) { return -1; }
+        if (x > y) { return 1; }
+        return 0;
     });
 
     videoGrid.innerHTML = "";
-    videoCardGrid(sortedMenuData);
+    videoCardGrid(videoList);
 
 }
-const listdescending = () => {
-    let sortedMenuData = videoList.sort((data1, data2) => {
-        return data2.title - data1.title;
+const listDescending = () => {
+
+    videoList.sort(function (a, b) {
+        var x = a.title.toLowerCase();
+        var y = b.title.toLowerCase();
+        if (x < y) { return 1; }
+        if (x > y) { return -1; }
+        return 0;
     });
 
     videoGrid.innerHTML = "";
-    videoCardGrid(sortedMenuData);
+    videoCardGrid(videoList);
 
 }
+
+
+
+
 const searchVideo = () => {
     const filterMenuData = videoList.filter(item => {
         const selected = searchBox.value;
@@ -90,5 +104,3 @@ const searchVideo = () => {
     videoGrid.innerHTML = "";
     videoCardGrid(filterMenuData);
 }
-
-console.log(videoGrid)
