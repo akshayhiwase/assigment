@@ -90,3 +90,5 @@ const searchVideo = () => {
     videoGrid.innerHTML = "";
     videoCardGrid(filterMenuData);
 }
+
+console.log(videoGrid)
